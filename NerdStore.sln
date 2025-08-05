@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36327.8 d17.14
+VisualStudioVersion = 17.14.36327.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -23,6 +23,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalogo.Domain",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Core", "src\NerdStore.Core\NerdStore.Core.csproj", "{513FFA3F-A390-4271-B22D-357C2D6871B3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0436E510-3EB5-410F-8255-E0467E2E02EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalogo.Domain.Tests", "tests\NerdStore.Catalogo.Domain.Tests\NerdStore.Catalogo.Domain.Tests.csproj", "{911ABB97-A3F3-4BEF-8CA0-55C9016BCF67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalogo.Data", "src\NerdStore.Catalogo.Data\NerdStore.Catalogo.Data.csproj", "{A07C0B33-61E6-48A2-946D-E1DC5CFB98E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +43,14 @@ Global
 		{513FFA3F-A390-4271-B22D-357C2D6871B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{513FFA3F-A390-4271-B22D-357C2D6871B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{513FFA3F-A390-4271-B22D-357C2D6871B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{911ABB97-A3F3-4BEF-8CA0-55C9016BCF67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{911ABB97-A3F3-4BEF-8CA0-55C9016BCF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{911ABB97-A3F3-4BEF-8CA0-55C9016BCF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{911ABB97-A3F3-4BEF-8CA0-55C9016BCF67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A07C0B33-61E6-48A2-946D-E1DC5CFB98E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07C0B33-61E6-48A2-946D-E1DC5CFB98E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07C0B33-61E6-48A2-946D-E1DC5CFB98E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07C0B33-61E6-48A2-946D-E1DC5CFB98E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +64,9 @@ Global
 		{0294CB8C-1973-4474-9563-9C3619B0F5C6} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{B6F21F5F-239D-4FC1-AA1E-BB6B78B14E24} = {158DF9AF-E681-4836-AD61-F88879957B4B}
 		{513FFA3F-A390-4271-B22D-357C2D6871B3} = {28B29329-8172-4141-9FBC-27EDFCDB43F5}
+		{0436E510-3EB5-410F-8255-E0467E2E02EE} = {158DF9AF-E681-4836-AD61-F88879957B4B}
+		{911ABB97-A3F3-4BEF-8CA0-55C9016BCF67} = {0436E510-3EB5-410F-8255-E0467E2E02EE}
+		{A07C0B33-61E6-48A2-946D-E1DC5CFB98E0} = {158DF9AF-E681-4836-AD61-F88879957B4B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {721F9280-CD0D-47B7-89CC-68B329310876}
