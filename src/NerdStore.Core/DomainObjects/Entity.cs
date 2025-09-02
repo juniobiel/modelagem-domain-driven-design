@@ -1,47 +1,75 @@
-﻿namespace NerdStore.Core.DomainObjects
+﻿using NerdStore.Core.Messages;
+
+namespace NerdStore.Core.DomainObjects
 {
     //Classe base de toda entidade
     public abstract class Entity
     {
         public Guid Id { get; set; }
 
+        private List<Event> _notificacoes;
+        public IReadOnlyCollection<Event> Notificacoes => _notificacoes?.AsReadOnly();
+
         protected Entity()
         {
             Id = Guid.NewGuid();
         }
 
-        //Retorna o valor bool para a comparação de classes
-        //Neste caso, está sendo otimizado para a classe Entity
-        //Aplicação de recursividade
-        public override bool Equals( object? obj )
+        public void AdicionarEvento( Event evento )
+        {
+            _notificacoes = _notificacoes ?? new List<Event>();
+            _notificacoes.Add(evento);
+        }
+
+        public void RemoverEvento( Event eventItem )
+        {
+            _notificacoes?.Remove(eventItem);
+        }
+
+        public void LimparEventos()
+        {
+            _notificacoes?.Clear();
+        }
+
+        public override bool Equals( object obj )
         {
             var compareTo = obj as Entity;
 
-            if(ReferenceEquals(this, compareTo)) return true;
-            if(ReferenceEquals(null, compareTo)) return false;
+            if (ReferenceEquals(this, compareTo)) return true;
+            if (ReferenceEquals(null, compareTo)) return false;
 
             return Id.Equals(compareTo.Id);
         }
 
-        //Traz a mesma denotação inicial de operações de comparação do Equals,
-        //Porém utiliza do operador ==
-        public static bool operator == ( Entity a, Entity b )
+        public static bool operator ==( Entity a, Entity b )
         {
-            if(ReferenceEquals(a, null) && ReferenceEquals(b, null)) return true;
+            if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
+                return true;
 
-            if(ReferenceEquals(a, null) || ReferenceEquals(b, null)) return false;
+            if (ReferenceEquals(a, null) || ReferenceEquals(b, null))
+                return false;
 
             return a.Equals(b);
         }
-        
-        //Implementação do operator diferente, pois necessita de validação para este caso
-        public static bool operator != ( Entity a, Entity b ) => !(a == b);
-        
-        //Implementação de obter HashCode único por meio de um multiplicador aleatório
-        public override int GetHashCode() => GetType().GetHashCode() * 907 + Id.GetHashCode();
-    
-        public override string ToString() => $"{GetType().Name} [Id = {Id}]";
 
-        public virtual bool EhValido() => throw new NotImplementedException();
+        public static bool operator !=( Entity a, Entity b )
+        {
+            return !(a == b);
+        }
+
+        public override int GetHashCode()
+        {
+            return (GetType().GetHashCode() * 907) + Id.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return $"{GetType().Name} [Id={Id}]";
+        }
+
+        public virtual bool EhValido()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
