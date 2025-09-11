@@ -15,6 +15,7 @@ namespace NerdStore.Core.DomainObjects
             Id = Guid.NewGuid();
         }
 
+        // Métodos para Notificações
         public void AdicionarEvento( Event evento )
         {
             _notificacoes = _notificacoes ?? new List<Event>();
@@ -31,6 +32,7 @@ namespace NerdStore.Core.DomainObjects
             _notificacoes?.Clear();
         }
 
+        // Fim dos métodos de notificações
         public override bool Equals( object obj )
         {
             var compareTo = obj as Entity;

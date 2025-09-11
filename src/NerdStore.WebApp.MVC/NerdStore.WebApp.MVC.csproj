@@ -8,19 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\Carrinho\**" />
     <Compile Remove="Views\Eventos\**" />
     <Compile Remove="Views\Home\**" />
     <Compile Remove="Views\Pedido\**" />
-    <Content Remove="Views\Carrinho\**" />
     <Content Remove="Views\Eventos\**" />
     <Content Remove="Views\Home\**" />
     <Content Remove="Views\Pedido\**" />
-    <EmbeddedResource Remove="Views\Carrinho\**" />
     <EmbeddedResource Remove="Views\Eventos\**" />
     <EmbeddedResource Remove="Views\Home\**" />
     <EmbeddedResource Remove="Views\Pedido\**" />
-    <None Remove="Views\Carrinho\**" />
     <None Remove="Views\Eventos\**" />
     <None Remove="Views\Home\**" />
     <None Remove="Views\Pedido\**" />
