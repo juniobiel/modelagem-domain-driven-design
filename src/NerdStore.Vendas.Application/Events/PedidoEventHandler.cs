@@ -1,10 +1,12 @@
 ﻿using MediatR;
+using NerdStore.Core.Messages.CommonMessages.IntegrationEvents;
 
 namespace NerdStore.Vendas.Application.Events
 {
     public class PedidoEventHandler : INotificationHandler<PedidoRascunhoIniciadoEvent>,
         INotificationHandler<PedidoAtualizadoEvent>,
-        INotificationHandler<PedidoItemAdicionadoEvent>
+        INotificationHandler<PedidoItemAdicionadoEvent>,
+        INotificationHandler<PedidoEstoqueRejeitadoEvent>
     {
         public Task Handle( PedidoRascunhoIniciadoEvent notification, CancellationToken cancellationToken )
         {
@@ -18,6 +20,12 @@ namespace NerdStore.Vendas.Application.Events
 
         public Task Handle( PedidoItemAdicionadoEvent notification, CancellationToken cancellationToken )
         {
+            return Task.CompletedTask;
+        }
+
+        public Task Handle( PedidoEstoqueRejeitadoEvent notification, CancellationToken cancellationToken )
+        {
+            //cancelar o processamento do pedido e retornar erro
             return Task.CompletedTask;
         }
     }
