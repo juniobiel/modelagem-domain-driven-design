@@ -1,4 +1,5 @@
-﻿using NerdStore.Core.DomainObjects;
+﻿using FluentValidation.Results;
+using NerdStore.Core.DomainObjects;
 
 namespace NerdStore.Vendas.Domain
 {
@@ -32,11 +33,16 @@ namespace NerdStore.Vendas.Domain
             _pedidoItems = new List<PedidoItem>();
         }
 
-        public void AplicarVoucher( Voucher voucher )
+        public ValidationResult AplicarVoucher( Voucher voucher )
         {
+            var validationResult = voucher.ValidarSeAplicavel();
+            if (!validationResult.IsValid) return validationResult;
+
             Voucher = voucher;
             VoucherUtilizado = true;
             CalcularValorPedido();
+
+            return validationResult;
         }
 
         public void CalcularValorPedido()
@@ -116,6 +122,18 @@ namespace NerdStore.Vendas.Domain
         {
             item.AtualizarUnidades(unidades);
             AtualizarItem(item);
+        }
+
+        public void RemoverItem( PedidoItem item )
+        {
+            if (!item.EhValido()) return;
+
+            var itemExistente = PedidoItems.FirstOrDefault(p => p.ProdutoId == item.ProdutoId);
+
+            if (itemExistente == null) throw new DomainException("O item não pertence ao pedido");
+            _pedidoItems.Remove(itemExistente);
+
+            CalcularValorPedido();
         }
 
         public void TornarRascunho() => PedidoStatus = PedidoStatus.Rascunho;
