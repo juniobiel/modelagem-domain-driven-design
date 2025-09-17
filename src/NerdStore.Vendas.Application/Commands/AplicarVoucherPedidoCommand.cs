@@ -8,7 +8,7 @@ namespace NerdStore.Vendas.Application.Commands
         public Guid ClienteId { get; private set; }
         public string CodigoVoucher { get; private set; }
 
-        public AplicarVoucherPedidoCommand( Guid clienteId, string codigoVoucher)
+        public AplicarVoucherPedidoCommand( Guid clienteId, string codigoVoucher )
         {
             ClienteId = clienteId;
             CodigoVoucher = codigoVoucher;

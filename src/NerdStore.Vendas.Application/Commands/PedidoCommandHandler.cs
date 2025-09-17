@@ -6,7 +6,6 @@ using NerdStore.Core.Messages;
 using NerdStore.Core.Messages.CommonMessages.Notifications;
 using NerdStore.Vendas.Application.Events;
 using NerdStore.Vendas.Domain;
-using System.Linq;
 
 namespace NerdStore.Vendas.Application.Commands
 {
@@ -19,7 +18,7 @@ namespace NerdStore.Vendas.Application.Commands
         private readonly IPedidoRepository _pedidoRepository;
         private readonly IMediatorHandler _mediatorHandler;
 
-        public PedidoCommandHandler( IPedidoRepository pedidoRepository, 
+        public PedidoCommandHandler( IPedidoRepository pedidoRepository,
             IMediatorHandler mediatorHandler )
         {
             _pedidoRepository = pedidoRepository;
@@ -123,7 +122,7 @@ namespace NerdStore.Vendas.Application.Commands
 
             return await _pedidoRepository.UnitOfWork.Commit();
         }
-        
+
         public async Task<bool> Handle( AplicarVoucherPedidoCommand message, CancellationToken cancellationToken )
         {
             if (!ValidarComando(message)) return false;

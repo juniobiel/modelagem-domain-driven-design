@@ -12,10 +12,10 @@ namespace NerdStore.WebApp.MVC.Controllers
 
         protected Guid ClienteId = Guid.Parse("4885e451-b0e4-4490-b959-04fabc806d32");
 
-        protected ControllerBase(INotificationHandler<DomainNotification> notifications,
-            IMediatorHandler mediatorHandler)
+        protected ControllerBase( INotificationHandler<DomainNotification> notifications,
+            IMediatorHandler mediatorHandler )
         {
-            _notifications = (DomainNotificationHandler) notifications;
+            _notifications = (DomainNotificationHandler)notifications;
             _mediatorHandler = mediatorHandler;
         }
 
@@ -29,7 +29,7 @@ namespace NerdStore.WebApp.MVC.Controllers
             return _notifications.ObterNotificacoes().Select(c => c.Value).ToList();
         }
 
-        protected void NotificarErro(string codigo, string mensagem)
+        protected void NotificarErro( string codigo, string mensagem )
         {
             _mediatorHandler.PublicarNotificacao(new DomainNotification(codigo, mensagem));
         }

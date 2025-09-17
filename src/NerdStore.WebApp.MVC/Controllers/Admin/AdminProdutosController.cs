@@ -28,9 +28,9 @@ namespace NerdStore.WebApp.MVC.Controllers.Admin
 
         [Route("novo-produto")]
         [HttpPost]
-        public async Task<IActionResult> NovoProduto(ProdutoViewModel produtoViewModel)
+        public async Task<IActionResult> NovoProduto( ProdutoViewModel produtoViewModel )
         {
-            if(!ModelState.IsValid) return View(await PopularCategorias(produtoViewModel));
+            if (!ModelState.IsValid) return View(await PopularCategorias(produtoViewModel));
 
             await _produtoAppService.AdicionarProduto(produtoViewModel);
 
@@ -40,14 +40,14 @@ namespace NerdStore.WebApp.MVC.Controllers.Admin
 
         [HttpGet]
         [Route("produtos-atualizar-estoque")]
-        public async Task<IActionResult> AtualizarEstoque(Guid id)
+        public async Task<IActionResult> AtualizarEstoque( Guid id )
         {
             return View("Estoque", await _produtoAppService.ObterPorId(id));
         }
 
         [HttpPost]
         [Route("produtos-atualizar-estoque")]
-        public async Task<IActionResult> AtualizarEstoque(Guid id, int quantidade)
+        public async Task<IActionResult> AtualizarEstoque( Guid id, int quantidade )
         {
             if (quantidade > 0) await _produtoAppService.ReporEstoque(id, quantidade);
             else await _produtoAppService.DebitarEstoque(id, quantidade);
@@ -56,7 +56,7 @@ namespace NerdStore.WebApp.MVC.Controllers.Admin
         }
 
 
-        private async Task<ProdutoViewModel> PopularCategorias(ProdutoViewModel produto)
+        private async Task<ProdutoViewModel> PopularCategorias( ProdutoViewModel produto )
         {
             produto.Categorias = await _produtoAppService.ObterCategorias();
             return produto;

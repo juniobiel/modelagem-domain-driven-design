@@ -12,7 +12,7 @@ namespace NerdStore.Catalogo.Domain
 
 
         protected Categoria() { }
-        public Categoria(string nome, int codigo)
+        public Categoria( string nome, int codigo )
         {
             Nome = nome;
             Codigo = codigo;

@@ -1,10 +1,8 @@
-﻿using NerdStore.Core.Messages;
-
-namespace NerdStore.Core.Messages.CommonMessages.DomainEvents
+﻿namespace NerdStore.Core.Messages.CommonMessages.DomainEvents
 {
     public class DomainEvent : Event
     {
-        public DomainEvent(Guid aggregateId)
+        public DomainEvent( Guid aggregateId )
         {
             AggregateId = aggregateId;
         }

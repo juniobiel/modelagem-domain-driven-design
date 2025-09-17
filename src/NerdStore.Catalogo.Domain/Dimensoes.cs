@@ -8,7 +8,7 @@ namespace NerdStore.Catalogo.Domain
         public decimal Largura { get; private set; }
         public decimal Profundidade { get; private set; }
 
-        public Dimensoes(decimal altura, decimal largura, decimal profundidade)
+        public Dimensoes( decimal altura, decimal largura, decimal profundidade )
         {
             Validacoes.ValidarSeMenorQue(altura, 1, "O campo Altura não pode ser menor que 1");
             Validacoes.ValidarSeMenorQue(largura, 1, "O campo Altura não pode ser menor que 1");
@@ -20,7 +20,7 @@ namespace NerdStore.Catalogo.Domain
         }
 
         public string DescricaoFormatada() => $"LxAxP: {Largura} x {Altura} x {Profundidade}";
-        
+
         public override string ToString() => DescricaoFormatada();
     }
 }

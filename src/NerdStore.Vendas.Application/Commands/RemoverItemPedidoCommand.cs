@@ -8,7 +8,7 @@ namespace NerdStore.Vendas.Application.Commands
         public Guid ClienteId { get; private set; }
         public Guid ProdutoId { get; private set; }
 
-        public RemoverItemPedidoCommand( Guid clienteId, Guid produtoId)
+        public RemoverItemPedidoCommand( Guid clienteId, Guid produtoId )
         {
             ClienteId = clienteId;
             ProdutoId = produtoId;

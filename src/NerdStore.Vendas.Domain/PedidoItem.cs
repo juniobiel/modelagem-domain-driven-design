@@ -15,7 +15,7 @@ namespace NerdStore.Vendas.Domain
 
         protected PedidoItem() { }
 
-        public PedidoItem(Guid produtoId, string produtoNome, int quantidade, decimal valorUnitario)
+        public PedidoItem( Guid produtoId, string produtoNome, int quantidade, decimal valorUnitario )
         {
             ProdutoId = produtoId;
             ProdutoNome = produtoNome;
@@ -23,7 +23,7 @@ namespace NerdStore.Vendas.Domain
             ValorUnitario = valorUnitario;
         }
 
-        internal void AssociarPedido(Guid pedidoId) => PedidoId = pedidoId;
+        internal void AssociarPedido( Guid pedidoId ) => PedidoId = pedidoId;
 
         internal void AdicionarUnidades( int unidades ) => Quantidade += unidades;
 

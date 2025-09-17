@@ -10,7 +10,7 @@ namespace NerdStore.Catalogo.Domain
         private readonly IProdutoRepository _produtoRepository;
         private readonly IMediatorHandler _mediatorHandler;
 
-        public EstoqueService(IProdutoRepository repository, IMediatorHandler mediatorHandler )
+        public EstoqueService( IProdutoRepository repository, IMediatorHandler mediatorHandler )
         {
             _produtoRepository = repository;
             _mediatorHandler = mediatorHandler;
@@ -62,7 +62,7 @@ namespace NerdStore.Catalogo.Domain
         {
             var produto = await _produtoRepository.ObterPorId(produtoId);
 
-            if(produto == null) return false;
+            if (produto == null) return false;
 
             produto.ReporEstoque(quantidade);
 
@@ -72,6 +72,6 @@ namespace NerdStore.Catalogo.Domain
         }
 
         public void Dispose() => _produtoRepository.Dispose();
-        
+
     }
 }

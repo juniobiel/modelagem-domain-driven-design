@@ -5,7 +5,7 @@ namespace NerdStore.Catalogo.Application.Services
     public interface IProdutoAppService : IDisposable
     {
         Task<IEnumerable<ProdutoViewModel>> ObterPorCategoria( int codigo );
-        Task<ProdutoViewModel> ObterPorId(Guid id);
+        Task<ProdutoViewModel> ObterPorId( Guid id );
         Task<IEnumerable<ProdutoViewModel>> ObterTodos();
         Task<IEnumerable<CategoriaViewModel>> ObterCategorias();
 

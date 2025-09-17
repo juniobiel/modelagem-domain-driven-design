@@ -9,7 +9,7 @@ namespace NerdStore.Catalogo.Application.AutoMapper
         public AutoMappingProfileViewToDomain()
         {
             CreateMap<ProdutoViewModel, Produto>()
-                .ConstructUsing(p => new Produto( p.Nome,
+                .ConstructUsing(p => new Produto(p.Nome,
                     p.Descricao,
                     p.Ativo,
                     p.Valor,

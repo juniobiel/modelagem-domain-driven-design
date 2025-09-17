@@ -17,7 +17,7 @@ namespace NerdStore.WebApp.MVC.Setup
 {
     public static class DependencyInjection
     {
-        public static void RegisterServices(this IServiceCollection services)
+        public static void RegisterServices( this IServiceCollection services )
         {
             // Mediator
             services.AddScoped<IMediatorHandler, MediatorHandler>();

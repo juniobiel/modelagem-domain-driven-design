@@ -9,7 +9,7 @@ namespace NerdStore.Core.Messages
 
         public ValidationResult ValidationResult { get; protected set; }
 
-        protected Command() 
+        protected Command()
         {
             TimeStamp = DateTime.Now;
         }

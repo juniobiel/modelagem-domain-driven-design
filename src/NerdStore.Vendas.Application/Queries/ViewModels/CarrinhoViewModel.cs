@@ -8,7 +8,7 @@
         public decimal ValorTotal { get; set; }
         public decimal ValorDesconto { get; set; }
         public string VoucherCodigo { get; set; }
-        public List<CarrinhoItemViewModel > Items { get; set; } = new List<CarrinhoItemViewModel>();
+        public List<CarrinhoItemViewModel> Items { get; set; } = new List<CarrinhoItemViewModel>();
         public CarrinhoPagamentoViewModel Pagamento { get; set; }
     }
 }

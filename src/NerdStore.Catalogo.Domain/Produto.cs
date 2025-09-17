@@ -27,7 +27,7 @@ namespace NerdStore.Catalogo.Domain
             Guid categoriaId,
             DateTime dataCadastro,
             string imagem,
-            Dimensoes dimensoes)
+            Dimensoes dimensoes )
         {
             CategoriaId = categoriaId;
             Nome = nome;
@@ -73,7 +73,7 @@ namespace NerdStore.Catalogo.Domain
             Validacoes.ValidarSeVazio(Nome, "O campo Nome do produto não pode estar vazio");
             Validacoes.ValidarSeVazio(Descricao, "O campo Descrição do produto não pode estar vazio");
             Validacoes.ValidarSeDiferente(CategoriaId, Guid.Empty, "O campo CategoriaId do produto não pode estar vazio");
-            Validacoes.ValidarSeMenorQue(Valor, (decimal) 1, "O campo Valor do produto não pode ser menor que 0");
+            Validacoes.ValidarSeMenorQue(Valor, (decimal)1, "O campo Valor do produto não pode ser menor que 0");
             Validacoes.ValidarSeVazio(Imagem, "O campo Imagem do produto não pode estar vazio");
         }
     }
