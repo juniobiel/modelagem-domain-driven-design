@@ -42,7 +42,7 @@ namespace NerdStore.Pagamentos.Business
 
             if (transacao.StatusTransacao == StatusTransacao.Pago)
             {
-               pagamento.AdicionarEvento(new PedidoPagamentoRealizadoEvent(pedido.Id, pagamentoPedido.ClienteId, transacao.PagamentoId, transacao.Id, pedido.Valor));
+                pagamento.AdicionarEvento(new PedidoPagamentoRealizadoEvent(pedido.Id, pagamentoPedido.ClienteId, transacao.PagamentoId, transacao.Id, pedido.Valor));
 
                 _pagamentoRepository.Adicionar(pagamento);
                 _pagamentoRepository.AdicionarTransacao(transacao);

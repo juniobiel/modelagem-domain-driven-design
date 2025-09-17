@@ -7,7 +7,7 @@ namespace NerdStore.Pagamentos.Data.Repository
     {
         private readonly PagamentoContext _context;
 
-        public PagamentoRepository(PagamentoContext context)
+        public PagamentoRepository( PagamentoContext context )
         {
             _context = context;
         }
@@ -15,12 +15,12 @@ namespace NerdStore.Pagamentos.Data.Repository
         public IUnitOfWork UnitOfWork => _context;
 
 
-        public void Adicionar(Pagamento pagamento)
+        public void Adicionar( Pagamento pagamento )
         {
             _context.Pagamentos.Add(pagamento);
         }
 
-        public void AdicionarTransacao(Transacao transacao)
+        public void AdicionarTransacao( Transacao transacao )
         {
             _context.Transacoes.Add(transacao);
         }

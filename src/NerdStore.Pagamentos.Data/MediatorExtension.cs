@@ -1,15 +1,11 @@
-﻿using NerdStore.Core.Messages;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using NerdStore.Core.Communication.Mediator;
 using NerdStore.Core.DomainObjects;
-using NerdStore.Core.Communication.Mediator;
 
 namespace NerdStore.Pagamentos.Data
 {
     public static class MediatorExtension
     {
-        public static async Task PublicarEventos(this IMediatorHandler mediator, PagamentoContext ctx)
+        public static async Task PublicarEventos( this IMediatorHandler mediator, PagamentoContext ctx )
         {
             var domainEntities = ctx.ChangeTracker
                 .Entries<Entity>()
@@ -23,7 +19,8 @@ namespace NerdStore.Pagamentos.Data
                 .ForEach(entity => entity.Entity.LimparEventos());
 
             var tasks = domainEvents
-                .Select(async (domainEvent) => {
+                .Select(async ( domainEvent ) =>
+                {
                     await mediator.PublicarEvento(domainEvent);
                 });
 

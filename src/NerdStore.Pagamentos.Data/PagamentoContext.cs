@@ -1,12 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NerdStore.Core.Communication.Mediator;
 using NerdStore.Core.Data;
-using NerdStore.Core.DomainObjects;
 using NerdStore.Core.Messages;
 using NerdStore.Pagamentos.Business;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace NerdStore.Pagamentos.Data
 {
@@ -14,7 +10,7 @@ namespace NerdStore.Pagamentos.Data
     {
         private readonly IMediatorHandler _mediatorHandler;
 
-        public PagamentoContext(DbContextOptions<PagamentoContext> options, IMediatorHandler rebusHandler)
+        public PagamentoContext( DbContextOptions<PagamentoContext> options, IMediatorHandler rebusHandler )
             : base(options)
         {
             _mediatorHandler = rebusHandler ?? throw new ArgumentNullException(nameof(rebusHandler));
@@ -45,7 +41,7 @@ namespace NerdStore.Pagamentos.Data
             return sucesso;
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating( ModelBuilder modelBuilder )
         {
             foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(
                 e => e.GetProperties().Where(p => p.ClrType == typeof(string))))

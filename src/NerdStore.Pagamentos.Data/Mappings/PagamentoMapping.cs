@@ -6,7 +6,7 @@ namespace NerdStore.Pagamentos.Data.Mappings
 {
     public class PagamentoMapping : IEntityTypeConfiguration<Pagamento>
     {
-        public void Configure(EntityTypeBuilder<Pagamento> builder)
+        public void Configure( EntityTypeBuilder<Pagamento> builder )
         {
             builder.HasKey(c => c.Id);
 

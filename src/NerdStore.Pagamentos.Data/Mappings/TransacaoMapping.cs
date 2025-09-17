@@ -6,7 +6,7 @@ namespace NerdStore.Pagamentos.Data.Mappings
 {
     public class TransacaoMapping : IEntityTypeConfiguration<Transacao>
     {
-        public void Configure(EntityTypeBuilder<Transacao> builder)
+        public void Configure( EntityTypeBuilder<Transacao> builder )
         {
             builder.HasKey(c => c.Id);
 

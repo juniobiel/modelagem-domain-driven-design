@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NerdStore.Catalogo.Domain;
 using NerdStore.Core.Data;
+using System.Threading.Tasks;
 
 namespace NerdStore.Catalogo.Data.Repository
 {
@@ -42,6 +43,11 @@ namespace NerdStore.Catalogo.Data.Repository
 
         public void Atualizar( Produto produto )
         {
+            var local = _context.Set<Produto>().Local.FirstOrDefault(e => e.Id == produto.Id);
+
+            if (local != null)
+                _context.Entry(local).State = EntityState.Detached;
+
             _context.Produtos.Update(produto);
         }
 
