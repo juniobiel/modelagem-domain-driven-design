@@ -16,6 +16,7 @@ Dentre estas técnicas pode-se destacar:
 1. Mensageria (Message Handler)
 1. Event Sourcing
 1. CQRS (Command Query Responsibility Segregation) - Segregação de responsabilidades entre leitura e escrita de dados.
+1. Configuração de Sagas vinculado com RabbitMQ e Rebus.
 
 ## Packages
 Pacotes instalados
@@ -30,6 +31,12 @@ Fonte: [refactoring.guru](https://refactoring.guru/pt-br/design-patterns/mediato
 
 `install-package mediatr`
 
+
+### Rebus
+[Rebus](https://github.com/rebus-org/Rebus) é um projeto open-source, utilizado para ser a implementação de um service bus.
+
+Utilizando-se do padrão de Sagas para o processamento de processos de negócio atrelados à solução com o RabbitMQ.
+[Repositório de configuração do projeto com o padrão SAGAS](https://github.com/juniobiel/Saga-Rebus).
 
 ## Créditos
 Curso [modelagem de domínios ricos](https://desenvolvedor.io/curso-online-modelagem-de-dominios-ricos)
