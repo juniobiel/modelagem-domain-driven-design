@@ -57,6 +57,15 @@ namespace NerdStore.Catalogo.Domain
             return true;
         }
 
+        public async Task<bool> ReporListaProdutosPedido( ListaProdutosPedido lista )
+        {
+            foreach (var item in lista.Itens)
+            {
+                await ReporItemEstoque(item.Id, item.Quantidade);
+            }
+
+            return await _produtoRepository.UnitOfWork.Commit();
+        }
 
         public async Task<bool> ReporEstoque( Guid produtoId, int quantidade )
         {
@@ -69,6 +78,18 @@ namespace NerdStore.Catalogo.Domain
             _produtoRepository.Atualizar(produto);
 
             return await _produtoRepository.UnitOfWork.Commit();
+        }
+
+        private async Task<bool> ReporItemEstoque( Guid produtoId, int quantidade )
+        {
+            var produto = await _produtoRepository.ObterPorId(produtoId);
+
+            if (produto == null) return false;
+            produto.ReporEstoque(quantidade);
+
+            _produtoRepository.Atualizar(produto);
+
+            return true;
         }
 
         public void Dispose() => _produtoRepository.Dispose();

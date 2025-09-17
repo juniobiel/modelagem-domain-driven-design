@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Vendas.Applicatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Vendas.Data", "src\NerdStore.Vendas.Data\NerdStore.Vendas.Data.csproj", "{3FFB0378-2893-4203-9196-885975F0FDE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Pagamentos.AntiCrruption", "src\NerdStore.Pagamentos.AntiCrruption\NerdStore.Pagamentos.AntiCrruption.csproj", "{B9B52685-5AEE-4404-AA73-282774E28EE1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Pagamentos.AntiCorruption", "src\NerdStore.Pagamentos.AntiCrruption\NerdStore.Pagamentos.AntiCorruption.csproj", "{B9B52685-5AEE-4404-AA73-282774E28EE1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Pagamentos.Business", "src\NerdStore.Pagamentos.Business\NerdStore.Pagamentos.Business.csproj", "{703C8B7D-F55F-4CF8-864F-8F791E735A6F}"
 EndProject

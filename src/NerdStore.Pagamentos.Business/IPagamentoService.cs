@@ -1,4 +1,6 @@
-﻿namespace NerdStore.Pagamentos.Business
+﻿using NerdStore.Core.DomainObjects.DTO;
+
+namespace NerdStore.Pagamentos.Business
 {
     public interface IPagamentoService
     {

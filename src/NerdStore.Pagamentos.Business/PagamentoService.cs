@@ -1,4 +1,6 @@
 ﻿using NerdStore.Core.Communication.Mediator;
+using NerdStore.Core.DomainObjects.DTO;
+using NerdStore.Core.Messages.CommonMessages.IntegrationEvents;
 using NerdStore.Core.Messages.CommonMessages.Notifications;
 
 namespace NerdStore.Pagamentos.Business
@@ -40,7 +42,7 @@ namespace NerdStore.Pagamentos.Business
 
             if (transacao.StatusTransacao == StatusTransacao.Pago)
             {
-                pagamento.AdicionarEvento(new PedidoPagamentoRealizadoEvent(pedido.Id, pagamentoPedido.ClienteId, transacao.PagamentoId, transacao.Id, pedido.Valor));
+               pagamento.AdicionarEvento(new PedidoPagamentoRealizadoEvent(pedido.Id, pagamentoPedido.ClienteId, transacao.PagamentoId, transacao.Id, pedido.Valor));
 
                 _pagamentoRepository.Adicionar(pagamento);
                 _pagamentoRepository.AdicionarTransacao(transacao);
